@@ -43,7 +43,7 @@ app.post('/start', (request, response) => {
 app.post('/move', (request, response) => {
   var data = request.body;
 
-   Choose a random direction to move in
+//Choose a random direction to move in
   possible_moves = ["up", "down", "left", "right"]
   var choice = Math.floor(Math.random() * possible_moves.length);
   var snake_move = possible_moves[choice];
