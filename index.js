@@ -50,7 +50,7 @@ app.post('/move', (request, response) => {
         return possibleMoves[turn % 4 ];
     };
     
-    const snakeMove - spinInCircles();
+    const snakeMove = spinInCircles();
 
 //Choose a random direction to move in
 //  possible_moves = ["up", "down", "left", "right"]
