@@ -41,17 +41,26 @@ app.post('/start', (request, response) => {
 // Valid moves are "up", "down", "left", or "right".
 // TODO: Use the information in cherrypy.request.json to decide your next move.
 app.post('/move', (request, response) => {
-  var data = request.body;
+    var data = request.body;
+
+//Spin in circle
+    const { turn } = data;
+    const spinInCircles = () => {
+        const possibleMoves = ["up", "down", "left", "right"];
+        return possibleMoves[turn % 4 ];
+    }
+    
+    const snakeMove - spinInCircles();
 
 //Choose a random direction to move in
-  possible_moves = ["up", "down", "left", "right"]
-  var choice = Math.floor(Math.random() * possible_moves.length);
-  var snake_move = possible_moves[choice];
+//  possible_moves = ["up", "down", "left", "right"]
+//  var choice = Math.floor(Math.random() * possible_moves.length);
+//  var snake_move = possible_moves[choice];
 //
     //const snakeMove = 'right';
-    console.log("MOVE: " + snake_move);
+    console.log("MOVE: " + snakeMove);
    
-  return response.json({ move: snake_move })
+  return response.json({ move: snakeMove })
 })
 
 // This function is called when a game your snake was in ends.
