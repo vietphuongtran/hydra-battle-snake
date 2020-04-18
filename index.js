@@ -46,7 +46,7 @@ app.post('/move', (request, response) => {
 //Spin in circle
     const { turn } = data;
     const spinInCircles = () => {
-        const possibleMoves = ["up", "right", "down", "left"];
+        const possibleMoves = ["up", "right", "up", "left" , "down", "left"];
         return possibleMoves[turn % 4 ]; //go up then turn right, then go down turn left
     };
     
