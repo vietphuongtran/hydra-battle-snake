@@ -54,7 +54,7 @@ app.post('/move', (request, response) => {
     //Zig Zag mover
     const { turn } = data;
     const zigZagMove = () => {
-        const possibleMoves = ["up", "right", "right", "right", "up", "up", "left", "left", "down", "down", "right", "up"];
+        const possibleMoves = ["up", "right", "right", "right", "down", "down", "left", "left", "down", "down", "right", "up"];
         return possibleMoves[turn % 12 ]; //go up then turn right, then go down turn left
     };
     
