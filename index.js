@@ -49,7 +49,7 @@ app.post('/move', (request, response) => {
 //  var snake_move = possible_moves[choice];
 //
 //  console.log("MOVE: " + snake_move);
-    const snakeMove = 'up';
+    const snakeMove = 'right';
   return response.json({ move: snake_move })
 })
 
