@@ -44,21 +44,21 @@ app.post('/move', (request, response) => {
     var data = request.body;
 
 //Spin in circle
-//    const { turn } = data;
-//    const spinInCircles = () => {
-//        const possibleMoves = ["up", "right", "down", "left"];
-//        return possibleMoves[turn % 4 ]; //go up then turn right, then go down turn left
-//    };
-//    
-//    const snakeMove = spinInCircles();
-    //Zig Zag mover
     const { turn } = data;
-    const zigZagMove = () => {
-        const possibleMoves = ["up", "right", "right", "down", "down", "left", "down", "right", "right"];
-        return possibleMoves[turn % 10 ]; //go up then turn right, then go down turn left
+    const spinInCircles = () => {
+        const possibleMoves = ["up", "right", "down", "left"];
+        return possibleMoves[turn % 4 ]; //go up then turn right, then go down turn left
     };
     
-    const snakeMove = zigZagMove();
+    const snakeMove = spinInCircles();
+    //Zig Zag mover
+//    const { turn } = data;
+//    const zigZagMove = () => {
+//        const possibleMoves = ["up", "right", "right", "down", "down", "left", "down", "right", "right", "up", "up"];
+//        return possibleMoves[turn % 10 ]; //go up then turn right, then go down turn left
+//    };
+//    
+//    const snakeMove = zigZagMove();
 
 //Choose a random direction to move in
 //  possible_moves = ["up", "down", "left", "right"]
