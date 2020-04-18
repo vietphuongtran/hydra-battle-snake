@@ -43,21 +43,21 @@ app.post('/start', (request, response) => {
 app.post('/move', (request, response) => {
     var data = request.body;
 
-////Spin in circle
-//    const { turn } = data;
-//    const spinInCircles = () => {
-//        const possibleMoves = ["up", "down", "left", "right"];
-//        return possibleMoves[turn % 4 ];
-//    };
-//    
-//    const snakeMove = spinInCircles();
+//Spin in circle
+    const { turn } = data;
+    const spinInCircles = () => {
+        const possibleMoves = ["up", "down", "left", "right"];
+        return possibleMoves[turn % 4 ];
+    };
+    
+    const snakeMove = spinInCircles();
 
 //Choose a random direction to move in
 //  possible_moves = ["up", "down", "left", "right"]
 //  var choice = Math.floor(Math.random() * possible_moves.length);
 //  var snake_move = possible_moves[choice];
 //
-    const snakeMove = 'right';
+    //const snakeMove = 'right';
     console.log("MOVE: " + snakeMove);
    
   return response.json({ move: snakeMove })
