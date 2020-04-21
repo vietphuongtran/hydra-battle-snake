@@ -43,15 +43,33 @@ app.post('/start', (request, response) => {
 app.post('/move', (request, response) => {
     var data = request.body;
 
-//Spin in circle
+////Spin in circle
+//    const { turn } = data;
+//    const spinInCircles = () => {
+//        const possibleMoves = ["up", "right", "down", "left"];
+//        return possibleMoves[turn % 4 ]; //go up then turn right, then go down turn left
+//    };
+//    
+//    const snakeMove = spinInCircles();
+//Dodge out of bound
     const { turn } = data;
-    const spinInCircles = () => {
-        const possibleMoves = ["up", "right", "down", "left"];
-        return possibleMoves[turn % 4 ]; //go up then turn right, then go down turn left
+    const dodgeBound = () => {
+        if (y == 0) {
+            const posibleMoves = ["right"];
+            return possibleMoves[turn % 1 ];
+        }
+        else if (x == 0 || y == 11) {
+            const posibleMoves = ["left"];
+            return possibleMoves[turn % 1 ];
+        }
+        else {
+            const possibleMoves = ["up", "right", "down", "left"];
+            return possibleMoves[turn % 4 ];
+        }
+        
     };
-    
-    const snakeMove = spinInCircles();
-    //Zig Zag mover
+    const snakeMove = dodgeBound();
+//Zig Zag mover
 //    const { turn } = data;
 //    const zigZagMove = () => {
 //        const possibleMoves = ["up", "right", "right", "down", "down", "left", "down", "right", "right", "up", "up"];
